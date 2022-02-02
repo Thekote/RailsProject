@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_204950) do
+ActiveRecord::Schema.define(version: 2022_02_02_113436) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
     t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.string "number", null: false
+    t.string "label", null: false
+    t.boolean "is_default", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
