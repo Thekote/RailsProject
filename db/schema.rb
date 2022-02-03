@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2022_02_03_212948) do
     t.boolean "is_default", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "contact_id", null: false
+    t.index ["contact_id"], name: "index_phones_on_contact_id"
     t.index ["number"], name: "index_phones_on_number", unique: true
   end
 
@@ -41,4 +43,5 @@ ActiveRecord::Schema.define(version: 2022_02_03_212948) do
   end
 
   add_foreign_key "contacts", "users"
+  add_foreign_key "phones", "contacts"
 end
