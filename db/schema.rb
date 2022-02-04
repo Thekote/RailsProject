@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_184434) do
+ActiveRecord::Schema.define(version: 2022_02_03_212948) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_184434) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.index ["user_id", "name"], name: "index_contacts_on_user_id_and_name", unique: true
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_184434) do
     t.boolean "is_default", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["number"], name: "index_phones_on_number", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_184434) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   add_foreign_key "contacts", "users"
