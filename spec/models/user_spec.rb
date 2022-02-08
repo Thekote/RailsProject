@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe User do
@@ -5,7 +7,7 @@ describe User do
     context 'when creating user without name' do
       it { should validate_presence_of(:name) }
     end
-    
+
     context 'when creating user' do
       subject { User.new(name: 'user') }
       it { should validate_uniqueness_of(:name).case_insensitive }
