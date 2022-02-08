@@ -7,7 +7,7 @@ describe User do
     end
     
     context 'when creating user' do
-      subject { User.new(name: 'user') }
+      subject { User.create!(name: 'user') }
       it { should validate_uniqueness_of(:name).case_insensitive }
     end
   end
