@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  row-gap: 20px;
+  border: 3px solid;
+  padding: 10px;
+}
+
+.grid__item {
+  border-block-end: 2px solid;
+}

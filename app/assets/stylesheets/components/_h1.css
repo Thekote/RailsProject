@@ -1,0 +1,5 @@
+.h1__header {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
