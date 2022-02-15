@@ -1,0 +1,12 @@
+<h1 class="h1__header">Users</h1>
+<div class="container">
+  <div class="grid">
+    <% @users.each do |user| %>
+      <div class="grid__item"> Name: <%= user.name %> </div>
+      <div class="grid__item"> Age: <%= user.age %> </div>
+      <div class="grid__item"> Bio: <%= user.bio %> </div>
+      <div class="grid__item"> Contacts: <%= user.contacts.count %> </div>
+      <div class="grid__item"> Phones: <%= user.phones.count %> </div>
+    <% end %>
+  </div>
+</div>
