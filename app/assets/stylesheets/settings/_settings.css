@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --weak-yellow: #ffe21d;
+  --strong-yellow: #ffd21d;
+  --dark-yellow: #c2a11d;
+  --weak-blue: #24afff;
+  --strong-blue: #248bff;
+  --dark-blue: #0e03a3;
+  --weak-red: #f26c6c;
+  --strong-red: #f22e2e;
+  --weak-green: #27b667;
+  --strong-green: #005928;
+  --white-floral: #fffaf0;
+  --main-bg: #f5f5dc;
+
+  /* Fonts */
+  --font-montserrat: "Montserrat", sans-serif;
+
+  /* Base */
+  --base-font-size: 16px;
+
+  /* Spacing */
+  --base-spacing: 16px;
+  --word-spacing: 1px;
+  --space-unit: 1em;
+  --space-small: calc(0.75 * var(--space-unit));
+  --space-medium: calc(1.25 * var(--space-unit));
+  --space-large: calc(2 * var(--space-unit));
+
+  /* Opacity */
+  --base-opacity: 0.6;
+}
