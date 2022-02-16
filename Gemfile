@@ -9,6 +9,8 @@ gem 'rubocop-rails', require: false
 
 gem 'net-smtp', require: false
 
+gem 'rails-controller-testing'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use sqlite3 as the database for Active Record
