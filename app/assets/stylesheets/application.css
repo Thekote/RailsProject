@@ -1,6 +1,6 @@
 @import "settings/_settings.css";
 @import "generic/_resets.css";
 @import "elements/_body.css";
-@import "components/_grid.css";
+@import "components/_users-table.css";
 @import "components/_container.css";
 @import "components/_h1.css";
