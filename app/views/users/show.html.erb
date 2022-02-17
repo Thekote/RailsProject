@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="h1__header"><%= @user.name %> contacts</h1>
+  <% @user.contacts.each do |contact| %>
+  <table>
+    <caption><b><%= contact.name %></b></caption>
+    <thead>
+      <tr class="users__table__row">
+        <th>Phone Number</th>
+        <th>Label</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%contact.phones.each do |phone|%>
+      <tr class="users__table__row">
+        <td class="users__table__data"><%=phone.number%></td>
+        <td class="users__table__data"><%=phone.label%></td>
+        <td class="users__table__data"><%=phone.is_default%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>
