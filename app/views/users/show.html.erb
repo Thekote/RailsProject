@@ -1,4 +1,9 @@
 <div class="container">
+  <div class="grid">
+      <div class="grid__item"> Name: <%= @user.name %> </div>
+      <div class="grid__item"> Age: <%= @user.age %> </div>
+      <div class="grid__item"> Bio: <%= @user.bio %> </div>
+  </div>
   <h1 class="h1__header"><%= @user.name %> contacts</h1>
   <% @user.contacts.each do |contact| %>
   <table>
