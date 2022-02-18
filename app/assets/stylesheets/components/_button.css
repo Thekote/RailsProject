@@ -1,0 +1,28 @@
+.button {
+  align-self: center;
+  margin: 3em;
+  border: 2px solid;
+  border-radius: 2em;
+  padding: 1em;
+  text-align: center;
+  font-size: var(--base-font-size);
+  width: 60%;
+  max-width: 7em;
+  margin: 0 auto;
+}
+
+.button__link {
+  text-decoration: none;
+}
+
+.button__link:visited {
+  color: black;
+}
+
+.button__link:active {
+  color: var(--weak-red);
+}
+
+.button__link:hover {
+  color: var(--strong-blue);
+}

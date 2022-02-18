@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  font-size: var(--base-font-size);
+}
+
+.form__input {
+  display: block;
+}
+
+.form__error {
+  color: var(--strong-red);
+}
