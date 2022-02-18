@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new'
 
-  post 'users/create' => 'users#create'
+  post 'users' => 'users#create'
 
   get 'users/edit' => 'users#edit'
 
