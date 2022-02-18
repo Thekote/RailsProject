@@ -1,0 +1,18 @@
+.users__table__row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 40px;
+  border: 2px solid;
+  text-align: left;
+  padding: 10px;
+}
+
+.users__table__row:not(:last-of-type) {
+  border-bottom: none;
+}
+
+.users__table__data {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
