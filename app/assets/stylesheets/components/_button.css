@@ -16,7 +16,7 @@
 }
 
 .button__link:visited {
-  color: black;
+  color: var(--black);
 }
 
 .button__link:active {
