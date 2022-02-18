@@ -24,4 +24,19 @@ RSpec.describe 'Users', type: :request do
       expect(assigns(:users)).to eq([user])
     end
   end
+
+  describe 'GET /new' do
+    it 'returns http success' do
+      get '/users#new'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST /create' do
+    it 'returns http success' do
+      post '/users#create', :params => { :user => { name: 'dummy' } }
+      expect(response).to have_http_status(:redirect)
+    end
+  end
+
 end
