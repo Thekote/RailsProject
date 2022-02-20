@@ -10,3 +10,9 @@
 .form__error {
   color: var(--strong-red);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
