@@ -18,7 +18,7 @@
           <td class="users__table__data" title="<%= user.bio %>"><%= user.bio %></td>
           <td class="users__table__data"><%= user.contacts.length %></td>
           <td class="users__table__data"><%= user.phones.length %></td>
-          <td class="users__table__data"><%= link_to 'Details', user_path(user.id), class: 'button__link' %></td>
+          <td class="users__table__data"><%= link_to 'Details', user_path(user.id), class: 'button__link' %>/<%= link_to 'Edit', user_edit_path(user.id), class: 'button__link'%></td>
         </tr>
       <% end %>
     </tbody>
