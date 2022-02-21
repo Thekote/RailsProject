@@ -38,20 +38,22 @@ RSpec.describe 'Users', type: :request do
 
   describe 'POST /create' do
     context 'when creating a user with valid params' do
-      it 'should create a new user' do
-        expect { post users_path({ user: { name: 'dummy' } }) }.to change { User.count }.by(1)
+      it 'creates a new user' do
+        user_attrs = { user: { name: 'dummy' } }
+        expect { post users_path(user_attrs) }.to change { User.count }.by(1)
       end
     end
 
     context 'when creating a user without valid params' do
-      it 'should not create a new user' do
-        expect { post users_path({ user: { name: '' } }) }.to_not change { User.count }
+      it 'does not create a new user' do
+        user_attrs = { user: { name: '' } }
+        expect { post users_path(user_attrs) }.to_not change { User.count }
       end
     end
   end
 
-  describe "GET /edit" do
-    it "returns http success" do
+  describe 'GET /edit' do
+    it 'returns http success' do
       user = User.create!(name: 'Dummy Two')
       get user_edit_path(user.id)
       expect(response).to have_http_status(:success)
@@ -59,10 +61,12 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe "PATCH /update" do
-    context 'should update user' do
-      it "returns http success" do
+    context 'when updating user with valid params' do
+      it 'updates user' do
         user = User.create!(name: 'Dummy Two', age: 15, bio: 'dudummy')
-        expect { patch user_update_path(user.id), params: { user: { name: 'Tony', age: 15, bio: 'dudummy' } } }.to change { user.name }
+        patch user_update_path(user.id), params: { user: { name: 'Tony', age: 15, bio: 'dudummy' } }
+        user.reload
+        expect(user.name).to eq('Tony')
       end
     end
   end
