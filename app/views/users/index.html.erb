@@ -13,14 +13,18 @@
     <tbody>
       <% @users.each do |user| %>
         <tr class="users__table__row">
-          <td class="users__table__data"><%=user.name%></td>
-          <td class="users__table__data"><%=user.age%></td>
-          <td class="users__table__data" title="<%=user.bio%>"><%=user.bio%></td>
-          <td class="users__table__data"><%=user.contacts.length%></td>
-          <td class="users__table__data"><%=user.phones.length%></td>
-          <td class="users__table__data"><%=link_to 'Details', user_path(user.id)%></td>
+          <td class="users__table__data"><%= user.name %></td>
+          <td class="users__table__data"><%= user.age  %></td>
+          <td class="users__table__data" title="<%= user.bio %>"><%= user.bio %></td>
+          <td class="users__table__data"><%= user.contacts.length %></td>
+          <td class="users__table__data"><%= user.phones.length %></td>
+          <td class="users__table__data"><%= link_to 'Details', user_path(user.id), class: 'button__link' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+<div class="container">
+  <%= link_to 'New user', users_new_path, class: 'button button__link'%>
+</div>
+
