@@ -1,17 +1,4 @@
 <div class="container">
-  <h1 class="h1">Create new user</h1>
-  <%= form_with model: @user do |form| %>
-    <%= form.label :username %>
-    <%= form.text_field :name, class: 'form__input', required: true %>
-    <% @user.errors.full_messages_for(:name).each do |message| %>
-      <p class="form__error"><%= message %></p>
-    <% end %>
-    <%= form.label :age %>
-    <%= form.number_field :age, class: 'form__input' %>
-    <%= form.label :bio %>
-    <%= form.text_area :bio, size: '20x5', class: 'form__input' %>
-    <div class="container">
-      <%= form.submit class: 'button button__link' %>
-    </div>
-  <% end %>
+<h1 class="h1">Create new user</h1>
+<%= render 'form', user: @user, button_name: 'Create' %>
 </div>
