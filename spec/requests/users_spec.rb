@@ -52,4 +52,24 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
+  describe 'GET /edit' do
+    it 'returns http success' do
+      user = User.create!(name: 'Dummy Two')
+      get user_edit_path(user.id)
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "PATCH /update" do
+    context 'when updating user with valid params' do
+      it 'updates user' do
+        user = User.create!(name: 'Dummy Two', age: 15, bio: 'dudummy')
+        patch user_update_path(user.id), params: { user: { name: 'Tony', age: 15, bio: 'dudummy' } }
+        user.reload
+        expect(user.name).to eq('Tony')
+      end
+    end
+  end
+
+
 end
