@@ -38,14 +38,16 @@ RSpec.describe 'Users', type: :request do
 
   describe 'POST /create' do
     context 'when creating a user with valid params' do
-      it 'should create a new user' do
-        expect { post users_path({ user: { name: 'dummy' } }) }.to change { User.count }.by(1)
+      it 'creates a new user' do
+        user_attrs = { user: { name: 'dummy' } }
+        expect { post users_path(user_attrs) }.to change { User.count }.by(1)
       end
     end
 
     context 'when creating a user without valid params' do
-      it 'shloud not create a new user' do
-        expect { post users_path({ user: { name: '' } }) }.to_not change { User.count }
+      it 'does not create a new user' do
+        user_attrs = { user: { name: '' } }
+        expect { post users_path(user_attrs) }.to_not change { User.count }
       end
     end
   end
